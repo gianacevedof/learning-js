@@ -1,0 +1,130 @@
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.545);
+  font-weight: bold;
+  border: none;
+  border-radius: 25%;
+  padding: 5px 10px;
+  box-shadow: 1px 1px 1px hsl(0, 0%, 0%, 0.3);
+}
+
+section {
+  padding: 30px 0;
+  margin: 30px 0;
+  box-shadow: 1px 1px 5px hsla(0, 0%, 0%, 0.3);
+}
+
+.center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#outputDiceResult img {
+  width: 100px;
+  margin: 5px;
+}
+
+#clock-container {
+  height: 50vh;
+  padding: 0;
+}
+
+#clock-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-image: url(imgs/clock.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#clock {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+#calcContainer {
+  background-color: rgba(0, 0, 0, 0.851);
+  max-width: 375px;
+  padding: 20px 5px;
+  border-radius: 25px;
+  justify-items: center;
+}
+
+#calcDisplay {
+  width: 100%;
+  height: 10vh;
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  text-align: right;
+  padding-right: 30px;
+  border-radius: 25px;
+}
+
+.calcBtns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 2em;
+  padding: 15px;
+  gap: 10px;
+}
+
+.calcBtns .opBtn {
+  background-color: orange;
+}
+.calcBtns .opBtn:hover {
+  background-color: rgb(255, 152, 26);
+}
+
+.calcBtns button {
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+.calcBtns button:hover {
+  background-color: rgb(67, 67, 67);
+}
+
+#fruits-bg ul {
+  border: 1px solid black;
+  box-shadow: 0 0 5px black;
+}
+
+.bgcircle {
+  width: 4em;
+  height: 4em;
+  border-radius: 50px;
+  border: 3px solid rgb(146, 146, 146);
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+}
+
+#bomb {
+  height: 50vh;
+  background-color: rgb(208 231 221);
+  margin: 0;
+  padding: 0;
+}
+
+#bomb-btn {
+  width: 40%;
+  height: 25%;
+}
+
+#emoji-container {
+  height: 50vh;
+}
+
+#emoji {
+  position: relative;
+  font-size: 4em;
+}
