@@ -555,12 +555,12 @@ function play(play) {
     isGameOver = true;
   } else if (userScore == 3) {
     result = "You win!";
-    resultOutput.textContent = result;
+    resultOutput.textContent = `Computer: ${computerChoice} - ${result}`;
     resultOutput.classList.add("rps-result-1");
     isGameOver = true;
   } else if (computerScore == 3) {
     result = "You lost!";
-    resultOutput.textContent = result;
+    resultOutput.textContent = `Computer: ${computerChoice} - ${result}`;
     resultOutput.classList.add("rps-result-2");
     isGameOver = true;
   }
