@@ -128,3 +128,36 @@ section {
   position: relative;
   font-size: 4em;
 }
+
+.choice {
+  font-size: 3.5em;
+  background-color: rgba(78, 228, 236, 0.6);
+  width: 21%;
+  border: 2px solid;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: black;
+}
+
+.choice:hover {
+  transform: scale(1.1);
+  background-color: rgba(69, 206, 213, 0.773);
+}
+
+#rps-result {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.rps-result-1 {
+  font-size: 2em;
+  color: rgb(0, 195, 0);
+  font-weight: bold;
+}
+
+.rps-result-2 {
+  font-size: 2em;
+  color: rgb(232, 0, 0);
+  font-weight: bold;
+}

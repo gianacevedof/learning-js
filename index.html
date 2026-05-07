@@ -298,6 +298,35 @@
       <p id="emoji" class="m-0">😎</p>
     </section>
 
+    <!-- ROCK, PAPER, SCISSORS GAMAE -->
+    <section id="rps-game">
+      <h1 class="fw-bold">Hey</h1>
+      <p class="fw-bold">Rock, Paper, Scissors?</p>
+      <p>Make your choice!</p>
+      <div class="rps-choices center-items gap-4">
+        <button class="choice" onclick="play('rock')">✊</button>
+        <button class="choice" onclick="play('paper')">✋</button>
+        <button class="choice" onclick="play('scissors')">✌️</button>
+      </div>
+      <br />
+      <div class="rps-results center-items fw-bold gap-5">
+        <div>
+          <p id="rps-user">Guest:</p>
+          <span id="user-score-output">0</span>
+        </div>
+        <div>
+          <p id="rps-computer">Computer:</p>
+          <span id="computer-score-output">0</span>
+        </div>
+      </div>
+      <br />
+      <span id="rps-result">Do you dare?</span>
+      <br />
+      <button id="rps-play-again" class="bg-secondary text-white">
+        Play again?
+      </button>
+    </section>
+
     <!-- LIVE PRACTICE -->
 
     <script src="assets/js.js"></script>

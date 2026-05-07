@@ -510,6 +510,84 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// ROCK, PAPER, SCISSORS GAME
+const computerScoreOutput = document.getElementById("computer-score-output");
+const userScoreOutput = document.getElementById("user-score-output");
+const rpsBtns = document.getElementsByClassName("choice");
+const choices = ["rock", "paper", "scissors"];
+const resultOutput = document.getElementById("rps-result");
+const playAgainBtn = document.getElementById("rps-play-again");
+let isGameOver = false;
+let isFirstRound = true;
+let userScore = 0;
+let computerScore = 0;
+let result = "";
+
+if (isFirstRound) {
+  playAgainBtn.style.visibility = "hidden";
+}
+
+function play(play) {
+  const userChoice = play;
+  const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+  if (userChoice == computerChoice) {
+    userScore++;
+    computerScore++;
+    userScoreOutput.textContent = userScore;
+    computerScoreOutput.textContent = computerScore;
+    resultOutput.textContent = "Tie!";
+  } else {
+    const wins = { rock: "scissors", paper: "rock", scissors: "paper" };
+    if (wins[userChoice] === computerChoice) {
+      userScore++;
+      userScoreOutput.textContent = userScore;
+    } else {
+      computerScore++;
+      computerScoreOutput.textContent = computerScore;
+    }
+    resultOutput.textContent = `Computer: ${computerChoice}`;
+  }
+
+  if (userScore == 3 && computerScore == 3) {
+    result = "It's a tie!";
+    resultOutput.textContent = result;
+    isGameOver = true;
+  } else if (userScore == 3) {
+    result = "You win!";
+    resultOutput.textContent = result;
+    resultOutput.classList.add("rps-result-1");
+    isGameOver = true;
+  } else if (computerScore == 3) {
+    result = "You lost!";
+    resultOutput.textContent = result;
+    resultOutput.classList.add("rps-result-2");
+    isGameOver = true;
+  }
+
+  if (isGameOver) {
+    playAgainBtn.style.visibility = "visible";
+    Array.from(rpsBtns).forEach((btn) => {
+      btn.disabled = true;
+    });
+  }
+}
+
+playAgainBtn.addEventListener("click", (event) => {
+  isGameOver = false;
+  playAgainBtn.style.visibility = "hidden";
+  userScore = 0;
+  computerScore = 0;
+  result = "";
+  userScoreOutput.textContent = userScore;
+  computerScoreOutput.textContent = computerScore;
+  resultOutput.textContent = "Good luck!";
+  resultOutput.classList.remove("rps-result-1", "rps-result-2");
+  Array.from(rpsBtns).forEach((btn) => {
+    btn.disabled = false;
+  });
+});
+
 // =============
 // LIVE PRACTICE
 // =============
