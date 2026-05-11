@@ -161,3 +161,60 @@ section {
   color: rgb(232, 0, 0);
   font-weight: bold;
 }
+
+#cars {
+  background-image: url(imgs/cars/bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+}
+
+#cars img {
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  top: 65%;
+  transform: translateY(-50%);
+}
+
+#cars button {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  position: absolute;
+  color: white;
+  top: 42%;
+  transition: 0.2s ease;
+}
+
+#cars button:hover {
+  transform: scaleY(1.1);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.hide-img {
+  display: none;
+}
+
+.show-img {
+  display: block;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
