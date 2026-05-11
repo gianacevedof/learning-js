@@ -588,6 +588,44 @@ playAgainBtn.addEventListener("click", (event) => {
   });
 });
 
+// CAR CONCESSIONARY
+const slides = document.querySelectorAll("#cars img");
+let slideIndex = 0;
+let slidesInterval = null;
+
+document.addEventListener("DOMContentLoaded", initializerSlider);
+
+function initializerSlider() {
+  if (slides.length > 0) {
+    slides[slideIndex].classList.add("show-img");
+    slidesInterval = setInterval(nextSlide, 5000);
+  }
+}
+
+function showSlide(index) {
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  } else if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
+
+  slides.forEach((slide) => {
+    slide.classList.remove("show-img");
+  });
+  slides[slideIndex].classList.add("show-img");
+}
+
+function nextSlide() {
+  slideIndex++;
+  showSlide(slideIndex);
+}
+
+function previousSlide() {
+  clearInterval(slidesInterval);
+  slideIndex--;
+  showSlide(slideIndex);
+}
+
 // =============
 // LIVE PRACTICE
 // =============
