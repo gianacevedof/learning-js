@@ -210,6 +210,11 @@ section {
   animation-duration: 1s;
 }
 
+.pokemonOutput {
+  background-color: rgb(240, 240, 240);
+  padding: 3em;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0.5;
