@@ -627,27 +627,33 @@ function previousSlide() {
 }
 
 // POKEMON FINDER SECTION
-const searchPokemon = document.getElementById("searchPokemonBtn");
 const outputPokemon = document.getElementById("pokemonDataOutput");
 
-searchPokemon.addEventListener("click", (event) => {
-  const pokemonName = document.getElementById("inputPokemonName").value;
-  findPokemon(pokemonName);
+document.getElementById("inputPokemonName").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") findPokemon(e.target.value.toLowerCase());
 });
 
-function findPokemon(pokemon) {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-    .then((res) => res.json())
-    .then((data) =>
-      displayPokemon(
-        data.sprites.front_default,
-        data.name,
-        data.weight,
-        data.height,
-        data.id,
-      ),
-    )
-    .catch((error) => console.error(error));
+async function findPokemon(pokemon) {
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+
+    if (!res.ok) {
+      console.error("Pokemon not found");
+      outputPokemon.innerHTML = `<p class="m-0 pokemonOutput">Pokemon not found.</p>`;
+      return;
+    }
+
+    const data = await res.json();
+    displayPokemon(
+      data.sprites.front_default,
+      data.name,
+      data.weight,
+      data.height,
+      data.id,
+    );
+  } catch (error) {
+    console.error(`Could not fetch resource - ${error}`);
+  }
 }
 
 function displayPokemon(pokemon, name, weight, height, id) {
