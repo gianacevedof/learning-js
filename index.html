@@ -361,23 +361,18 @@
       <br />
 
       <label for="inputPokemonName">Enter a Pokemon name:</label>
-      <input type="text" id="inputPokemonName" />
-      <br />
-      <button type="submit" id="searchPokemonBtn" class="bg-warning text-white">
-        Search
-      </button>
+      <input
+        type="text"
+        id="inputPokemonName"
+        placeholder='Press "Enter" to search'
+      />
       <br />
 
       <div
         id="pokemonDataOutput"
-        class="center-items flex-column bg-warning-subtle fw-bold"
+        class="d-flex align-items-center justify-content-left fw-bold"
       >
-        <p
-          style="background-color: rgb(240, 240, 240); padding: 6em"
-          class="m-0"
-        >
-          Your Pokemon data will appear here.
-        </p>
+        <p class="m-0 pokemonOutput">Your Pokemon data will appear here.</p>
       </div>
     </section>
 
