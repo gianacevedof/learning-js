@@ -1,0 +1,37 @@
+{
+  "user1": {
+    "id": 1,
+    "name": "Giancarlo",
+    "age": 20,
+    "role": "Software Developer",
+    "skills": ["JavaScript", "PHP", "Python"]
+  },
+  "user2": {
+    "id": 2,
+    "name": "Chantal",
+    "age": 22,
+    "role": "UI Designer",
+    "skills": ["Figma", "CSS", "HTML"]
+  },
+  "user3": {
+    "id": 3,
+    "name": "Samuel",
+    "age": 25,
+    "role": "Data Analyst",
+    "skills": ["Python", "SQL", "Excel"]
+  },
+  "user4": {
+    "id": 4,
+    "name": "Oli",
+    "age": 23,
+    "role": "Cybersecurity Analyst",
+    "skills": ["Linux", "Networking", "Ethical Hacking"]
+  },
+  "user5": {
+    "id": 5,
+    "name": "Francisco",
+    "age": 21,
+    "role": "Backend Developer",
+    "skills": ["Java", "MySQL", "Git"]
+  }
+}

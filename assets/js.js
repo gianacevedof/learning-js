@@ -626,6 +626,49 @@ function previousSlide() {
   showSlide(slideIndex);
 }
 
+// POKEMON FINDER SECTION
+const searchPokemon = document.getElementById("searchPokemonBtn");
+const outputPokemon = document.getElementById("pokemonDataOutput");
+
+searchPokemon.addEventListener("click", (event) => {
+  const pokemonName = document.getElementById("inputPokemonName").value;
+  findPokemon(pokemonName);
+});
+
+function findPokemon(pokemon) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    .then((res) => res.json())
+    .then((data) =>
+      displayPokemon(
+        data.sprites.front_default,
+        data.name,
+        data.weight,
+        data.height,
+        data.id,
+      ),
+    )
+    .catch((error) => console.error(error));
+}
+
+function displayPokemon(pokemon, name, weight, height, id) {
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+
+  outputPokemon.innerHTML = `
+    <img 
+      src="${pokemon}" 
+      alt="Image of a Pokemon"
+      id="pokemonDataOutput"
+      style="height: 300px;">
+    </img>
+    <div>
+      <p>Name: ${name}</p>
+      <p>Weight: ${weight}(kg)</p>
+      <p>Height: ${height}(m)</p>
+      <p>ID: ${id}</p>
+    </div>
+  `;
+}
+
 // =============
 // LIVE PRACTICE
 // =============

@@ -355,6 +355,32 @@
       <button class="right" onclick="nextSlide()">&#10095;</button>
     </section>
 
+    <!-- POKEMON FINDER -->
+    <section class="center-items flex-column bg-primary-subtle">
+      <h1>Pokemon Finder</h1>
+      <br />
+
+      <label for="inputPokemonName">Enter a Pokemon name:</label>
+      <input type="text" id="inputPokemonName" />
+      <br />
+      <button type="submit" id="searchPokemonBtn" class="bg-warning text-white">
+        Search
+      </button>
+      <br />
+
+      <div
+        id="pokemonDataOutput"
+        class="center-items flex-column bg-warning-subtle fw-bold"
+      >
+        <p
+          style="background-color: rgb(240, 240, 240); padding: 6em"
+          class="m-0"
+        >
+          Your Pokemon data will appear here.
+        </p>
+      </div>
+    </section>
+
     <!-- LIVE PRACTICE -->
 
     <script src="assets/js.js"></script>
