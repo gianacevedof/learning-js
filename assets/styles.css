@@ -215,6 +215,105 @@ section {
   padding: 3em;
 }
 
+.weatherBg {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 140, 255, 0.5),
+    rgba(255, 170, 0, 0.6)
+  );
+  margin: 0;
+}
+
+.thunderstorm {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    url(imgs/weather/thunderstorm.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.rain {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+    url(imgs/weather/rain.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.snow {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(imgs/weather/snow.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.atmosphere {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+    url(imgs/weather/atmosphere.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.clear {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+    url(imgs/weather/clear.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.cloudy {
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+    url(imgs/weather/cloudy.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+#weatherInput {
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.662);
+  color: black;
+}
+
+.weatherCity,
+.weatherTemp,
+.weatherDescription,
+.weatherHumidity,
+.weatherEmoji {
+  text-shadow: 0 0 5px black;
+  margin: 5px;
+}
+
+.weatherDescription {
+  text-transform: capitalize;
+}
+
+.weatherCity,
+.weatherEmoji {
+  font-size: 4em;
+}
+
+.weatherError {
+  background-color: red;
+  width: 50%;
+  padding: 5px;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0.5;
