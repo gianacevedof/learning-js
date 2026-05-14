@@ -227,7 +227,7 @@ section {
 .thunderstorm {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-    url(imgs/weather/thunderstorm.png);
+    url(imgs/weather/thunderstorm.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -237,7 +237,7 @@ section {
 .rain {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-    url(imgs/weather/rain.png);
+    url(imgs/weather/rain.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -247,7 +247,7 @@ section {
 .snow {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(imgs/weather/snow.png);
+    url(imgs/weather/snow.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -257,7 +257,7 @@ section {
 .atmosphere {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-    url(imgs/weather/atmosphere.png);
+    url(imgs/weather/atmosphere.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -267,7 +267,7 @@ section {
 .clear {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-    url(imgs/weather/clear.png);
+    url(imgs/weather/clear.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,7 +277,7 @@ section {
 .cloudy {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-    url(imgs/weather/cloudy.png);
+    url(imgs/weather/cloudy.jpeg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
