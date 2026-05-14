@@ -675,6 +675,108 @@ function displayPokemon(pokemon, name, weight, height, id) {
   `;
 }
 
-// =============
-// LIVE PRACTICE
-// =============
+// THE WEATHER SECTION
+const cityInput = document.getElementById("weatherInput");
+const weatherCard = document.querySelector(".weatherCard");
+const weatherContainer = document.getElementById("weather");
+const apiKey = "d80d81e952366a55c7f11a9107b5b1f3";
+
+cityInput.addEventListener("keydown", async (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    const weatherData = await getWeatherData(e.target.value);
+    displayWeatherInfo(weatherData);
+  }
+});
+
+async function getWeatherData(city) {
+  try {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const res = await fetch(apiUrl);
+
+    if (!res.ok) {
+      console.error(`Could not fetch weather data for "${city}"`);
+      window.alert(`404 Not Found: ${city}`);
+    }
+
+    return await res.json();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function displayWeatherInfo(data) {
+  const {
+    name: city,
+    main: { temp, humidity },
+    weather: [{ description, id }],
+  } = data;
+
+  const emoji = getWeatherEmoji(id);
+  const fah = Math.floor(((temp - 273.15) * 9) / 5 + 32);
+  weatherBackground(id);
+
+  weatherCard.innerHTML = `
+    <h1 class="weatherCity">${city}</h1>
+    <h1 class="weatherTemp">${fah}ºF</h1>
+    <p class="weatherDescription">${description}</p>
+    <p class="weatherHumidity">Humidity: ${humidity}%</p>
+    <p class="weatherEmoji">${emoji}</p>
+  `;
+}
+
+function getWeatherEmoji(id) {
+  switch (true) {
+    case id >= 200 && id < 300:
+      return "⛈️";
+      break;
+    case id >= 500 && id < 600:
+      return "🌧️";
+      break;
+    case id >= 600 && id < 700:
+      return "🌨️";
+      break;
+    case id >= 700 && id < 800:
+      return "🌫️";
+      break;
+    case id === 800:
+      return "☀️";
+      break;
+    case id > 800:
+      return "☁️";
+      break;
+  }
+}
+
+function weatherBackground(id) {
+  weatherContainer.classList.remove(
+    "weatherBg",
+    "thunderstorm",
+    "rain",
+    "snow",
+    "atmosphere",
+    "clear",
+    "cloudy",
+  );
+
+  switch (true) {
+    case id >= 200 && id < 300:
+      weatherContainer.classList.add("thunderstorm");
+      break;
+    case id >= 500 && id < 600:
+      weatherContainer.classList.add("rain");
+      break;
+    case id >= 600 && id < 700:
+      weatherContainer.classList.add("snow");
+      break;
+    case id >= 700 && id < 800:
+      weatherContainer.classList.add("atmosphere");
+      break;
+    case id === 800:
+      weatherContainer.classList.add("clear");
+      break;
+    case id > 800:
+      weatherContainer.classList.add("cloudy");
+      break;
+  }
+}
